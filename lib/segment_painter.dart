@@ -19,7 +19,7 @@ class DigitPainter extends CustomPainter {
   static const Map<String, String> segmentMap = {
     //    012345678901234567
     //    abhkmnacupgtsrdfe.
-    ' ': '11110000000000001',
+    ' ': '11111000000000001',
   };
 
   bool _segmentOnOff(int index) {
@@ -110,6 +110,24 @@ class DigitPainter extends CustomPainter {
       canvas.drawPath(path, paint);
     }
 
+    segment = 'm';
+    if (segmentIndex.indexOf(segment) == 4) {
+      paint.color = _segmentOnOff(segmentIndex.indexOf(segment))
+          ? foreground
+          : background;
+      print(segment);
+      path = Path();
+      path.moveTo(145 + offset_x, 55 + offset_y);
+      path.relativeLineTo(30, 0);
+      path.relativeLineTo(25, 0);
+      path.relativeLineTo(-20, 125);
+      path.relativeLineTo(-35, 60);
+      path.relativeLineTo(-25, 0);
+      path.relativeLineTo(0, -30);
+      path.close();
+      canvas.drawPath(path, paint);
+    }
+
     segment = '.';
     if (segmentIndex.indexOf(segment) == 17) {
       paint.color = _segmentOnOff(segmentIndex.indexOf(segment))
@@ -124,246 +142,6 @@ class DigitPainter extends CustomPainter {
     }
 
     """
-    segment = 'k';
-    if (segmentIndex.indexOf(segment) == 3) {
-      paint.color = _segmentOnOff(segmentIndex.indexOf(segment))
-          ? foreground
-          : background;
-      print(segment);
-      path.moveTo(size.width * 2.45, size.height * 2.19);
-      path.cubicTo(size.width * 2.39, size.height * 2.15, size.width * 2.34,
-          size.height * 2.12, size.width * 2.33, size.height * 2.12);
-      path.cubicTo(size.width * 2.32, size.height * 2.11, size.width * 2.31,
-          size.height * 2.07, size.width * 2.24, size.height * 1.75);
-      path.cubicTo(size.width * 2.19, size.height * 1.55, size.width * 2.15,
-          size.height * 1.38, size.width * 2.15, size.height * 1.38);
-      path.cubicTo(size.width * 2.15, size.height * 1.37, size.width * 2.15,
-          size.height * 1.36, size.width * 2.23, size.height * 1.33);
-      path.cubicTo(size.width * 2.23, size.height * 1.33, size.width * 2.31,
-          size.height * 1.28, size.width * 2.31, size.height * 1.28);
-      path.cubicTo(size.width * 2.31, size.height * 1.28, size.width * 2.37,
-          size.height * 1.28, size.width * 2.37, size.height * 1.28);
-      path.cubicTo(size.width * 2.43, size.height * 1.28, size.width * 2.43,
-          size.height * 1.28, size.width * 2.43, size.height * 1.29);
-      path.cubicTo(size.width * 2.44, size.height * 1.31, size.width * 2.64,
-          size.height * 2.17, size.width * 2.64, size.height * 2.17);
-      path.cubicTo(size.width * 2.64, size.height * 2.18, size.width * 2.57,
-          size.height * 2.26, size.width * 2.57, size.height * 2.26);
-      path.cubicTo(size.width * 2.56, size.height * 2.26, size.width * 2.51,
-          size.height * 2.23, size.width * 2.45, size.height * 2.19);
-      path.cubicTo(size.width * 2.45, size.height * 2.19, size.width * 2.45,
-          size.height * 2.19, size.width * 2.45, size.height * 2.19);
-      path.lineTo(size.width * 2.6, size.height * 2.21);
-      canvas.drawPath(path, paint);
-    }
-
-    segment = 'm';
-    if (segmentIndex.indexOf(segment) == 4) {
-      paint.color = _segmentOnOff(segmentIndex.indexOf(segment))
-          ? foreground
-          : background;
-      print(segment);
-      path.moveTo(size.width * 0.91, size.height * 2.05);
-      path.cubicTo(size.width * 0.9, size.height * 2.03, size.width * 0.89,
-          size.height * 2, size.width * 0.89, size.height * 1.97);
-      path.cubicTo(size.width * 0.89, size.height * 1.97, size.width * 0.87,
-          size.height * 1.94, size.width * 0.87, size.height * 1.94);
-      path.cubicTo(size.width * 0.87, size.height * 1.94, size.width * 1.03,
-          size.height * 1.65, size.width * 1.03, size.height * 1.65);
-      path.cubicTo(size.width * 1.12, size.height * 1.49, size.width * 1.19,
-          size.height * 1.36, size.width * 1.19, size.height * 1.35);
-      path.cubicTo(size.width * 1.19, size.height * 1.35, size.width * 1.22,
-          size.height * 1.35, size.width * 1.26, size.height * 1.35);
-      path.cubicTo(size.width * 1.26, size.height * 1.35, size.width * 1.32,
-          size.height * 1.35, size.width * 1.32, size.height * 1.35);
-      path.cubicTo(size.width * 1.32, size.height * 1.35, size.width * 1.32,
-          size.height * 1.46, size.width * 1.32, size.height * 1.46);
-      path.cubicTo(size.width * 1.32, size.height * 1.46, size.width * 1.32,
-          size.height * 1.57, size.width * 1.32, size.height * 1.57);
-      path.cubicTo(size.width * 1.32, size.height * 1.57, size.width * 1.16,
-          size.height * 1.83, size.width * 1.16, size.height * 1.83);
-      path.cubicTo(size.width * 1.16, size.height * 1.83, size.width,
-          size.height * 2.09, size.width, size.height * 2.09);
-      path.cubicTo(size.width, size.height * 2.09, size.width * 0.96,
-          size.height * 2.09, size.width * 0.96, size.height * 2.09);
-      path.cubicTo(size.width * 0.96, size.height * 2.09, size.width * 0.92,
-          size.height * 2.09, size.width * 0.92, size.height * 2.09);
-      path.cubicTo(size.width * 0.92, size.height * 2.09, size.width * 0.91,
-          size.height * 2.05, size.width * 0.91, size.height * 2.05);
-      path.cubicTo(size.width * 0.91, size.height * 2.05, size.width * 0.91,
-          size.height * 2.05, size.width * 0.91, size.height * 2.05);
-      path.lineTo(size.width, size.height * 2.09);
-      path.cubicTo(size.width, size.height * 2.09, size.width * 1.07,
-          size.height * 1.97, size.width * 1.16, size.height * 1.82);
-      path.cubicTo(size.width * 1.16, size.height * 1.82, size.width * 1.32,
-          size.height * 1.57, size.width * 1.32, size.height * 1.57);
-      path.cubicTo(size.width * 1.32, size.height * 1.57, size.width * 1.31,
-          size.height * 1.46, size.width * 1.31, size.height * 1.46);
-      path.cubicTo(size.width * 1.31, size.height * 1.46, size.width * 1.31,
-          size.height * 1.36, size.width * 1.31, size.height * 1.36);
-      path.cubicTo(size.width * 1.31, size.height * 1.36, size.width * 1.26,
-          size.height * 1.36, size.width * 1.26, size.height * 1.36);
-      path.cubicTo(size.width * 1.26, size.height * 1.36, size.width * 1.2,
-          size.height * 1.36, size.width * 1.2, size.height * 1.36);
-      path.cubicTo(size.width * 1.2, size.height * 1.36, size.width * 1.04,
-          size.height * 1.65, size.width * 1.04, size.height * 1.65);
-      path.cubicTo(size.width * 0.95, size.height * 1.8, size.width * 0.88,
-          size.height * 1.94, size.width * 0.88, size.height * 1.94);
-      path.cubicTo(size.width * 0.88, size.height * 1.94, size.width * 0.93,
-          size.height * 2.08, size.width * 0.93, size.height * 2.09);
-      path.cubicTo(size.width * 0.93, size.height * 2.09, size.width * 0.94,
-          size.height * 2.09, size.width * 0.96, size.height * 2.09);
-      path.cubicTo(size.width * 0.98, size.height * 2.09, size.width,
-          size.height * 2.09, size.width, size.height * 2.09);
-      path.cubicTo(size.width, size.height * 2.09, size.width,
-          size.height * 2.09, size.width, size.height * 2.09);
-      canvas.drawPath(path, paint);
-    }
-
-    segment = 'n';
-    if (segmentIndex.indexOf(segment) == 5) {
-      paint.color = _segmentOnOff(segmentIndex.indexOf(segment))
-          ? foreground
-          : background;
-      print(segment);
-      path.moveTo(size.width * 1.54, size.height * 2.09);
-      path.cubicTo(size.width * 1.53, size.height * 2.09, size.width * 1.51,
-          size.height * 1.98, size.width * 1.47, size.height * 1.84);
-      path.cubicTo(size.width * 1.47, size.height * 1.84, size.width * 1.42,
-          size.height * 1.59, size.width * 1.42, size.height * 1.59);
-      path.cubicTo(size.width * 1.42, size.height * 1.59, size.width * 1.42,
-          size.height * 1.47, size.width * 1.42, size.height * 1.47);
-      path.cubicTo(size.width * 1.42, size.height * 1.47, size.width * 1.42,
-          size.height * 1.35, size.width * 1.42, size.height * 1.35);
-      path.cubicTo(size.width * 1.42, size.height * 1.35, size.width * 1.49,
-          size.height * 1.35, size.width * 1.49, size.height * 1.35);
-      path.cubicTo(size.width * 1.49, size.height * 1.35, size.width * 1.55,
-          size.height * 1.35, size.width * 1.55, size.height * 1.35);
-      path.cubicTo(size.width * 1.55, size.height * 1.35, size.width * 1.64,
-          size.height * 1.48, size.width * 1.64, size.height * 1.48);
-      path.cubicTo(size.width * 1.64, size.height * 1.48, size.width * 1.73,
-          size.height * 1.6, size.width * 1.73, size.height * 1.6);
-      path.cubicTo(size.width * 1.73, size.height * 1.6, size.width * 1.78,
-          size.height * 1.85, size.width * 1.78, size.height * 1.85);
-      path.cubicTo(size.width * 1.82, size.height * 1.98, size.width * 1.84,
-          size.height * 2.09, size.width * 1.84, size.height * 2.09);
-      path.cubicTo(size.width * 1.84, size.height * 2.09, size.width * 1.77,
-          size.height * 2.09, size.width * 1.69, size.height * 2.09);
-      path.cubicTo(size.width * 1.57, size.height * 2.09, size.width * 1.54,
-          size.height * 2.09, size.width * 1.54, size.height * 2.09);
-      path.cubicTo(size.width * 1.54, size.height * 2.09, size.width * 1.54,
-          size.height * 2.09, size.width * 1.54, size.height * 2.09);
-      path.lineTo(size.width * 1.83, size.height * 2.09);
-      path.cubicTo(size.width * 1.83, size.height * 2.09, size.width * 1.82,
-          size.height * 2.02, size.width * 1.8, size.height * 1.93);
-      path.cubicTo(size.width * 1.78, size.height * 1.85, size.width * 1.76,
-          size.height * 1.78, size.width * 1.76, size.height * 1.77);
-      path.cubicTo(size.width * 1.76, size.height * 1.76, size.width * 1.75,
-          size.height * 1.73, size.width * 1.73, size.height * 1.66);
-      path.cubicTo(size.width * 1.73, size.height * 1.66, size.width * 1.72,
-          size.height * 1.61, size.width * 1.72, size.height * 1.61);
-      path.cubicTo(size.width * 1.72, size.height * 1.61, size.width * 1.63,
-          size.height * 1.48, size.width * 1.63, size.height * 1.48);
-      path.cubicTo(size.width * 1.63, size.height * 1.48, size.width * 1.55,
-          size.height * 1.36, size.width * 1.55, size.height * 1.36);
-      path.cubicTo(size.width * 1.55, size.height * 1.36, size.width * 1.49,
-          size.height * 1.36, size.width * 1.49, size.height * 1.36);
-      path.cubicTo(size.width * 1.49, size.height * 1.36, size.width * 1.42,
-          size.height * 1.36, size.width * 1.42, size.height * 1.36);
-      path.cubicTo(size.width * 1.42, size.height * 1.36, size.width * 1.42,
-          size.height * 1.48, size.width * 1.42, size.height * 1.48);
-      path.cubicTo(size.width * 1.42, size.height * 1.48, size.width * 1.42,
-          size.height * 1.6, size.width * 1.42, size.height * 1.6);
-      path.cubicTo(size.width * 1.42, size.height * 1.6, size.width * 1.48,
-          size.height * 1.84, size.width * 1.48, size.height * 1.84);
-      path.cubicTo(size.width * 1.52, size.height * 1.98, size.width * 1.54,
-          size.height * 2.09, size.width * 1.54, size.height * 2.09);
-      path.cubicTo(size.width * 1.54, size.height * 2.09, size.width * 1.61,
-          size.height * 2.09, size.width * 1.69, size.height * 2.09);
-      path.cubicTo(size.width * 1.77, size.height * 2.09, size.width * 1.83,
-          size.height * 2.09, size.width * 1.83, size.height * 2.09);
-      path.cubicTo(size.width * 1.83, size.height * 2.09, size.width * 1.83,
-          size.height * 2.09, size.width * 1.83, size.height * 2.09);
-      canvas.drawPath(path, paint);
-    }
-
-    segment = 'c';
-    if (segmentIndex.indexOf(segment) == 6) {
-      paint.color = _segmentOnOff(segmentIndex.indexOf(segment))
-          ? foreground
-          : background;
-      print(segment);
-      path.moveTo(size.width * 2.06, size.height * 1.92);
-      path.cubicTo(size.width * 1.98, size.height * 1.82, size.width * 1.9,
-          size.height * 1.73, size.width * 1.9, size.height * 1.73);
-      path.cubicTo(size.width * 1.89, size.height * 1.72, size.width * 1.86,
-          size.height * 1.68, size.width * 1.82, size.height * 1.64);
-      path.cubicTo(size.width * 1.82, size.height * 1.64, size.width * 1.75,
-          size.height * 1.55, size.width * 1.75, size.height * 1.55);
-      path.cubicTo(size.width * 1.75, size.height * 1.55, size.width * 1.71,
-          size.height * 1.45, size.width * 1.71, size.height * 1.45);
-      path.cubicTo(size.width * 1.7, size.height * 1.4, size.width * 1.68,
-          size.height * 1.36, size.width * 1.68, size.height * 1.36);
-      path.cubicTo(size.width * 1.68, size.height * 1.35, size.width * 1.71,
-          size.height * 1.35, size.width * 1.74, size.height * 1.35);
-      path.cubicTo(size.width * 1.74, size.height * 1.35, size.width * 1.8,
-          size.height * 1.35, size.width * 1.8, size.height * 1.35);
-      path.cubicTo(size.width * 1.8, size.height * 1.35, size.width * 1.99,
-          size.height * 1.55, size.width * 1.99, size.height * 1.55);
-      path.cubicTo(size.width * 1.99, size.height * 1.55, size.width * 2.17,
-          size.height * 1.75, size.width * 2.17, size.height * 1.75);
-      path.cubicTo(size.width * 2.17, size.height * 1.75, size.width * 2.21,
-          size.height * 1.91, size.width * 2.21, size.height * 1.91);
-      path.cubicTo(size.width * 2.23, size.height * 2, size.width * 2.25,
-          size.height * 2.08, size.width * 2.25, size.height * 2.09);
-      path.cubicTo(size.width * 2.26, size.height * 2.09, size.width * 2.26,
-          size.height * 2.09, size.width * 2.24, size.height * 2.09);
-      path.cubicTo(size.width * 2.24, size.height * 2.09, size.width * 2.21,
-          size.height * 2.09, size.width * 2.21, size.height * 2.09);
-      path.cubicTo(size.width * 2.21, size.height * 2.09, size.width * 2.06,
-          size.height * 1.92, size.width * 2.06, size.height * 1.92);
-      path.cubicTo(size.width * 2.06, size.height * 1.92, size.width * 2.06,
-          size.height * 1.92, size.width * 2.06, size.height * 1.92);
-      path.lineTo(size.width * 2.25, size.height * 2.09);
-      path.cubicTo(size.width * 2.25, size.height * 2.09, size.width * 2.23,
-          size.height * 2.01, size.width * 2.21, size.height * 1.92);
-      path.cubicTo(size.width * 2.21, size.height * 1.92, size.width * 2.17,
-          size.height * 1.75, size.width * 2.17, size.height * 1.75);
-      path.cubicTo(size.width * 2.17, size.height * 1.75, size.width * 2.11,
-          size.height * 1.69, size.width * 2.11, size.height * 1.69);
-      path.cubicTo(size.width * 2.08, size.height * 1.66, size.width * 2.05,
-          size.height * 1.63, size.width * 2.05, size.height * 1.63);
-      path.cubicTo(size.width * 2.05, size.height * 1.62, size.width * 2.04,
-          size.height * 1.61, size.width * 2.04, size.height * 1.61);
-      path.cubicTo(size.width * 2.03, size.height * 1.61, size.width * 1.98,
-          size.height * 1.55, size.width * 1.91, size.height * 1.48);
-      path.cubicTo(size.width * 1.91, size.height * 1.48, size.width * 1.79,
-          size.height * 1.36, size.width * 1.79, size.height * 1.36);
-      path.cubicTo(size.width * 1.79, size.height * 1.36, size.width * 1.74,
-          size.height * 1.36, size.width * 1.74, size.height * 1.36);
-      path.cubicTo(size.width * 1.71, size.height * 1.36, size.width * 1.69,
-          size.height * 1.36, size.width * 1.69, size.height * 1.36);
-      path.cubicTo(size.width * 1.69, size.height * 1.36, size.width * 1.7,
-          size.height * 1.4, size.width * 1.72, size.height * 1.46);
-      path.cubicTo(size.width * 1.72, size.height * 1.46, size.width * 1.76,
-          size.height * 1.55, size.width * 1.76, size.height * 1.55);
-      path.cubicTo(size.width * 1.76, size.height * 1.55, size.width * 1.82,
-          size.height * 1.63, size.width * 1.82, size.height * 1.63);
-      path.cubicTo(size.width * 1.86, size.height * 1.67, size.width * 1.89,
-          size.height * 1.71, size.width * 1.9, size.height * 1.72);
-      path.cubicTo(size.width * 1.91, size.height * 1.73, size.width * 1.97,
-          size.height * 1.8, size.width * 2.05, size.height * 1.89);
-      path.cubicTo(size.width * 2.13, size.height * 1.98, size.width * 2.2,
-          size.height * 2.06, size.width * 2.21, size.height * 2.07);
-      path.cubicTo(size.width * 2.22, size.height * 2.09, size.width * 2.22,
-          size.height * 2.09, size.width * 2.23, size.height * 2.09);
-      path.cubicTo(size.width * 2.24, size.height * 2.09, size.width * 2.25,
-          size.height * 2.09, size.width * 2.25, size.height * 2.09);
-      path.cubicTo(size.width * 2.25, size.height * 2.09, size.width * 2.25,
-          size.height * 2.09, size.width * 2.25, size.height * 2.09);
-      canvas.drawPath(path, paint);
-    }
-
     segment = 'u';
     if (segmentIndex.indexOf(segment) == 7) {
       paint.color = _segmentOnOff(segmentIndex.indexOf(segment))
