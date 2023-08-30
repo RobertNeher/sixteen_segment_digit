@@ -15,11 +15,11 @@ class DigitPainter extends CustomPainter {
   }
 
   static const double opacity = 0.5;
-  static const String segmentIndex = 'abhkmncupgtsrdfe.';
+  static const String segmentIndex = 'abhkmncupgtsrdfe.\'';
   static const Map<String, String> segmentMap = {
-    //    01234567890123456
-    //    abhkmncupgtsrdfe.
-    ' ': '11111111111111101',
+    //    012345678901234567
+    //    abhkmncupgtsrdfe.'
+    ' ': '111111111111111111',
   };
 
   bool _segmentOnOff(int index) {
@@ -296,6 +296,22 @@ class DigitPainter extends CustomPainter {
       canvas.drawPath(path, paint);
     }
 
+    segment = 'e';
+    if (segmentIndex.indexOf(segment) == 15) {
+      paint.color = _segmentOnOff(segmentIndex.indexOf(segment))
+          ? foreground
+          : background;
+      print(segment);
+      path = Path();
+      path.moveTo(-90 + offset_x, 537 + offset_y);
+      path.relativeLineTo(40, -30);
+      path.relativeLineTo(140, 0);
+      path.relativeLineTo(-10, 50);
+      path.relativeLineTo(-150, 0);
+      path.close();
+      canvas.drawPath(path, paint);
+    }
+
     segment = '.';
     if (segmentIndex.indexOf(segment) == 16) {
       paint.color = _segmentOnOff(segmentIndex.indexOf(segment))
@@ -305,6 +321,20 @@ class DigitPainter extends CustomPainter {
       path = Path();
       path.addOval(Rect.fromCircle(
           center: Offset(320 + offset_x, 525 + offset_y), radius: 35));
+      canvas.drawPath(path, paint);
+    }
+
+    segment = '\'';
+    if (segmentIndex.indexOf(segment) == 17) {
+      paint.color = _segmentOnOff(segmentIndex.indexOf(segment))
+          ? foreground
+          : background;
+      print(segment);
+      path = Path();
+      path.moveTo(-75 + offset_x, -10 + offset_y);
+      path.relativeLineTo(40, 0);
+      path.relativeLineTo(-40, 40);
+      path.close();
       canvas.drawPath(path, paint);
     }
   }
