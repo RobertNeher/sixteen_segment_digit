@@ -19,7 +19,7 @@ class DigitPainter extends CustomPainter {
   static const Map<String, String> segmentMap = {
     //    012345678901234567
     //    abhkmnacupgtsrdfe.
-    ' ': '11111000000000001',
+    ' ': '11111100000000001',
   };
 
   bool _segmentOnOff(int index) {
@@ -128,6 +128,22 @@ class DigitPainter extends CustomPainter {
       canvas.drawPath(path, paint);
     }
 
+    segment = 'n';
+    if (segmentIndex.indexOf(segment) == 5) {
+      paint.color = _segmentOnOff(segmentIndex.indexOf(segment))
+          ? foreground
+          : background;
+      print(segment);
+      path = Path();
+      path.moveTo(265 + offset_x, 55 + offset_y);
+      path.relativeLineTo(10, 0);
+      path.relativeLineTo(-13, 80);
+      path.relativeLineTo(-70, 105);
+      path.relativeLineTo(-20, 0);
+      path.relativeLineTo(10, -50);
+      path.close();
+      canvas.drawPath(path, paint);
+    }
     segment = '.';
     if (segmentIndex.indexOf(segment) == 17) {
       paint.color = _segmentOnOff(segmentIndex.indexOf(segment))
