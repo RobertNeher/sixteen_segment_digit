@@ -82,12 +82,12 @@ class DigitPainter extends CustomPainter {
           : background;
       print(segment);
       path = Path();
-      path.moveTo(20 + offset_x, 30 + offset_y);
-      path.relativeLineTo(-10, -10);
-      path.relativeLineTo(25, 25);
-      path.relativeLineTo(100, -30);
-      path.relativeLineTo(-20, 20);
-      path.relativeLineTo(-10, 0);
+      path.moveTo(-25 + offset_x, 35 + offset_y);
+      path.relativeLineTo(20, -17);
+      path.relativeLineTo(30, 30);
+      path.relativeLineTo(-30, 180);
+      path.relativeLineTo(-40, 35);
+      path.relativeLineTo(-20, 0);
       path.close();
       canvas.drawPath(path, paint);
     }
