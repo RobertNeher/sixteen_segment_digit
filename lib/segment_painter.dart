@@ -162,6 +162,22 @@ class DigitPainter extends CustomPainter {
       canvas.drawPath(path, paint);
     }
 
+    segment = 'u';
+    if (segmentIndex.indexOf(segment) == 7) {
+      paint.color = _segmentOnOff(segmentIndex.indexOf(segment))
+          ? foreground
+          : background;
+      print(segment);
+      path = Path();
+      path.moveTo(-50 + offset_x, 275 + offset_y);
+      path.relativeLineTo(40, -30);
+      path.relativeLineTo(135, 0);
+      path.relativeLineTo(-7, 55);
+      path.relativeLineTo(-125, 0);
+      path.close();
+      canvas.drawPath(path, paint);
+    }
+
     segment = '.';
     if (segmentIndex.indexOf(segment) == 16) {
       paint.color = _segmentOnOff(segmentIndex.indexOf(segment))
