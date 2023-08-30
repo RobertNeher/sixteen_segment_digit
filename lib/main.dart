@@ -73,7 +73,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               CustomPaint(
                   painter: DigitPainter(
-                      symbol: ' ',
+                      symbol: 'A',
                       foreground: Colors.red,
                       background: Colors.white)),
             ])));
