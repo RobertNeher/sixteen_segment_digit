@@ -303,11 +303,11 @@ class DigitPainter extends CustomPainter {
           : background;
       print(segment);
       path = Path();
-      path.moveTo(-90 + offset_x, 537 + offset_y);
-      path.relativeLineTo(40, -30);
-      path.relativeLineTo(140, 0);
-      path.relativeLineTo(-10, 50);
-      path.relativeLineTo(-150, 0);
+      path.moveTo(105 + offset_x, 505 + offset_y);
+      path.relativeLineTo(100, 0);
+      path.relativeLineTo(30, 35);
+      path.relativeLineTo(-20, 20);
+      path.relativeLineTo(-120, 0);
       path.close();
       canvas.drawPath(path, paint);
     }
