@@ -56,6 +56,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  TextEditingController symbol = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -67,15 +69,24 @@ class _MyHomePageState extends State<MyHomePage> {
             height: 700,
             width: 500,
             color: Colors.transparent,
-            child: Stack(alignment: Alignment.topCenter, children: [
-              const Image(
-                image: AssetImage('assets/images/Segment-Labels.png'),
+            child: Column(children: [
+              TextField(
+                controller: symbol,
+                onChanged: (value) {
+                  symbol.text = value;
+                  setState(() {});
+                },
               ),
-              CustomPaint(
-                  painter: DigitPainter(
-                      symbol: 'A',
-                      foreground: Colors.red,
-                      background: Colors.white)),
+              Stack(alignment: Alignment.topCenter, children: [
+                const Image(
+                  image: AssetImage('assets/images/Segment-Labels.png'),
+                ),
+                CustomPaint(
+                    painter: DigitPainter(
+                        symbol: symbol.text,
+                        foreground: Colors.red,
+                        background: Colors.white)),
+              ])
             ])));
   }
 }
