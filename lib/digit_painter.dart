@@ -4,22 +4,25 @@ class DigitPainter extends CustomPainter {
   String symbol;
   Color foreground;
   Color background;
+  double opacity;
+  bool separator = true;
 
   DigitPainter({
     this.symbol = '',
     this.foreground = Colors.red,
     this.background = Colors.yellowAccent,
+    this.opacity = 0.5,
+    this.separator = false,
   }) {
     foreground = foreground.withOpacity(opacity);
     background = background.withOpacity(opacity);
   }
 
-  static const double opacity = 0.5;
   static const String segmentIndex = 'abhkmncupgtsrdfe.\'';
   static const Map<String, String> segmentMap = {
-    'all': '11111111111111110',
+    'all': '11111111111111111',
     //    012345678901234567
-    //    abh kmncupgtsrdfe.'
+    //    abhkmncupgtsrdfe.'
     ' ': '000000000000000000',
     '!': '000000100000010010',
     '"': '000010100000000000',
@@ -109,7 +112,6 @@ class DigitPainter extends CustomPainter {
     'v': '000000000110000000',
     'w': '000000000110110000',
     'x': '000101000010100000',
-    //    abhkmncupgtsrdfe.'
     'y': '000010101000010100',
     'z': '000000010010001000',
     '{': '010010010001000100',
@@ -404,10 +406,8 @@ class DigitPainter extends CustomPainter {
     }
 
     segment = '\'';
-    if (segmentIndex.indexOf(segment) == 17) {
-      paint.color = _segmentOnOff(segmentIndex.indexOf(segment))
-          ? foreground
-          : background;
+    if (segmentIndex.indexOf(segment) == 17 || separator) {
+      paint.color = separator ? foreground : background;
       path = Path();
       path.moveTo(-75 + offset_x, -10 + offset_y);
       path.relativeLineTo(40, 0);
