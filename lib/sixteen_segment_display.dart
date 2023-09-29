@@ -8,10 +8,16 @@ class SixteenSegmentDisplay extends StatefulWidget {
       this.background = Colors.red,
       this.foreground = Colors.yellowAccent,
       this.scaleFactor = 1.0,
+      this.opacity = 0.5,
+      this.separator = false,
+      this.decimalPoint = false,
       this.symbol = 'all'});
   final Color foreground;
   final Color background;
   final double scaleFactor;
+  final double opacity;
+  final bool separator;
+  final bool decimalPoint;
   final String symbol;
 
   @override
@@ -28,8 +34,9 @@ class _DigitalClockState extends State<SixteenSegmentDisplay> {
               foreground: widget.foreground,
               background: widget.background,
               symbol: widget.symbol,
-              opacity: 0.5,
-              separator: false),
+              opacity: widget.opacity,
+              separator: widget.separator,
+              decimalPoint: widget.decimalPoint),
         ));
   }
 }
