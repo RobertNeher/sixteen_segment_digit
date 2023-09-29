@@ -1,16 +1,16 @@
-# test
+# 16 Segments Display
 
-"A new Flutter project."
+16 Segments LED Display, known from your DIY electronics craft box</br>
 
-## Getting Started
+For formatting and segment indentification:<br/>
+<img src="./assets/images/Segment-Labels.png" alt="16SegmentsDisplay" width="200"/>
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Key is the core SixteenSegmentDisplay which properties are:<br/>
+|Property|Description|
+|----|----|
+|foreground|Foreground color for segments|
+|background|Background color for segments|
+|scaleFactor|Scaling of the whole digit to display: 0 - 1.0, 100% = (x: 400, y:600)|
+|opacity| Opacity of both of the segment colors above: 0 - 1.0, 100% = Opaque, 0% = Transparent|
+|separator| A triangle at the top left corner, for separation of 1000 group. Is set without full refresh, good for flashing purposes|
+|decimalPoint|Decimal point at the bottom right corner. Is set without full refresh, good for flashing purposes|
