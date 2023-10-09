@@ -87,11 +87,6 @@ class _DisplayTestState extends State<DisplayTest> {
         controller: symbol,
         onFieldSubmitted: _onSubmit,
       ),
-      // TextFormField(
-      //   controller: sizeFactor,
-      //   onFieldSubmitted: _setSizeFactor,
-      //   keyboardType: const TextInputType.numberWithOptions(decimalPoint: true),
-      // ),
       ValueListenableBuilder<String>(
           valueListenable: _symbol,
           builder: (BuildContext context, String value, Widget? child) {

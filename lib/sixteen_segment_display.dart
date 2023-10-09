@@ -27,16 +27,20 @@ class SixteenSegmentDisplay extends StatefulWidget {
 class _DigitalClockState extends State<SixteenSegmentDisplay> {
   @override
   Widget build(BuildContext context) {
-    return Transform.scale(
-        scale: widget.scaleFactor,
-        child: CustomPaint(
-          painter: DigitPainter(
-              foreground: widget.foreground,
-              background: widget.background,
-              symbol: widget.symbol,
-              opacity: widget.opacity,
-              separator: widget.separator,
-              decimalPoint: widget.decimalPoint),
-        ));
+    return Container(
+        width: 210,
+        height: MediaQuery.of(context).size.height,
+        alignment: Alignment.topLeft,
+        child: Transform.scale(
+            scale: 0.5,
+            child: CustomPaint(
+              painter: DigitPainter(
+                  foreground: widget.foreground,
+                  background: widget.background,
+                  symbol: widget.symbol,
+                  opacity: widget.opacity,
+                  separator: widget.separator,
+                  decimalPoint: widget.decimalPoint),
+            )));
   }
 }

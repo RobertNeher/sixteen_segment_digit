@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:test/display_test.dart';
+import 'package:test/display_time.dart';
 
 void main() {
   runApp(MyDigitShow());
@@ -10,11 +10,12 @@ class MyDigitShow extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         title: 'Digit Show',
+        debugShowCheckedModeBanner: false,
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: Scaffold(
-          body: DisplayTest(),
+        home: const Scaffold(
+          body: DisplayTime(),
         ));
   }
 }
